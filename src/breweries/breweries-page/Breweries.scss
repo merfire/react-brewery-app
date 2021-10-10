@@ -1,0 +1,26 @@
+@import '/src/styles/variables';
+
+.breweries {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-bottom: 100px;
+
+  h4 {
+    text-align: center;
+    margin: 4rem 0;
+    padding: 0 1em;
+
+    span {
+      border-bottom: 3px solid $primary;
+    }
+  }
+
+  table {
+    tr {
+      cursor: pointer;
+      &:hover {
+        background-color: #e3f2fd;
+      }
+    }
+  }
+}

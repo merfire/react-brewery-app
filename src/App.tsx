@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.scss';
+import Breweries from './breweries/breweries-page/Breweries';
+import BreweryDetails from './breweries/brewery-details/BreweryDetails';
+import Favorites from './favorites/Favorites';
+import { Home } from './home/Home';
+import BackToHome from './shared/components/back-to-home/BackToHome';
+import { NoMatch } from './shared/components/NoMatch';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <DefaultLayout></DefaultLayout>
+    </Router>
   );
 }
 
-export default App;
+export function DefaultLayout() {
+  return (
+    <>
+      <Routes></Routes>
+      <BackToHome></BackToHome>
+    </>
+  );
+}
+
+function Routes() {
+  return (
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
+      <Route path="/breweries/:id">
+        <BreweryDetails />
+      </Route>
+      <Route path="/breweries">
+        <Breweries />
+      </Route>
+      <Route path="/favorites">
+        <Favorites />
+      </Route>
+      <Route path="/dashboard">
+        <Home />
+      </Route>
+      <Route path="*">
+        <NoMatch />
+      </Route>
+    </Switch>
+  );
+}

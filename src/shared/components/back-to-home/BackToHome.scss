@@ -1,0 +1,26 @@
+@import '/src/styles/variables';
+
+#back-to-home {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  padding: 1em 3em;
+  border-radius: 30px;
+  background-color: $secondary;
+
+  &:hover {
+    background-color: darken($secondary, 5%);
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 1em;
+
+    .MuiButton-startIcon {
+      margin: 0;
+    }
+
+    .back-to-home-text {
+      display: none;
+    }
+  }
+}

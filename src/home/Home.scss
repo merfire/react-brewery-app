@@ -1,0 +1,72 @@
+@import '/src/styles/variables';
+
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2em;
+
+  img {
+    border-radius: 4px;
+  }
+
+  h4 {
+    margin: 1.5em 0 1em;
+    padding-bottom: 0.2em;
+    border-bottom: 5px solid $primary;
+  }
+
+  .search-wrapper {
+    display: flex;
+    gap: 30px;
+
+    .input {
+      min-width: 400px;
+
+      fieldset {
+        border-radius: 30px;
+      }
+    }
+
+    .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: $primary;
+    }
+
+    .search-button {
+      padding: 1em 3em;
+      border-radius: 30px;
+      background-color: $primary;
+
+      &:hover {
+        background-color: darken($primary, 10%);
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+
+      .input {
+        min-width: auto;
+      }
+
+      .search-button {
+        padding: 1em;
+      }
+    }
+  }
+
+  .favorites-button {
+    margin-top: 3em;
+    padding: 1em 5em;
+    border-radius: 30px;
+    background-color: $secondary;
+
+    &:hover {
+      background-color: darken($secondary, 5%);
+    }
+  }
+}

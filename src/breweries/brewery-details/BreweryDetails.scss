@@ -1,0 +1,78 @@
+@import '/src/styles/variables';
+
+.brewery {
+  max-width: 1000px;
+  margin: 5em auto;
+  padding: 0 1em;
+
+  .wrapper {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 50px;
+
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+      gap: 30px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .align-center {
+    align-items: center;
+  }
+
+  .logo {
+    border-radius: 8px;
+    background-color: #bdbdbd;
+  }
+
+  .type {
+    span {
+      background-color: #fff3e0;
+      padding: 4px 8px;
+      border-radius: 4px;
+      color: #e65100;
+    }
+  }
+
+  iframe {
+    width: 400px;
+
+    @media screen and (max-width: 768px) {
+      width: auto;
+    }
+  }
+
+  p {
+    margin: 1em 0 0.5em;
+  }
+
+  a {
+    text-decoration: none;
+    color: #1a0dab;
+    font-weight: bold;
+  }
+
+  iframe {
+    background-color: rgba(0, 0, 0, 0.11);
+  }
+
+  .favorite-button {
+    margin-top: 1.5rem;
+    padding: 0.5rem 2rem;
+    border-radius: 10px;
+    background-color: $secondary;
+
+    &:hover {
+      background-color: darken($secondary, 5%);
+    }
+
+    &.delete {
+      background-color: #f44336;
+
+      &:hover {
+        background-color: darken(#f44336, 5%);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.favorites {
+  padding: 0 1em;
+  h4 {
+    margin: 4rem 0 2rem;
+    border-bottom: 5px solid #ff9c52;
+    width: fit-content;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
